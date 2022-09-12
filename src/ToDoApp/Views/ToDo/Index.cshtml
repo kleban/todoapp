@@ -1,0 +1,19 @@
+﻿@{
+}
+
+@model IEnumerable<ToDoItem>
+
+    <h3>Мій список задач</h3>
+    <hr />
+    @if(Model.Any()) {
+
+        <ul>
+            @foreach(var todo in Model)
+            {
+                <li>@todo.Text</li>
+            }
+        </ul>
+
+    } else {
+        <div class="alert alert-danger">Задачі відсутні</div>
+    }
